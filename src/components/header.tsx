@@ -35,19 +35,19 @@ export default function Header({ currentLang = "cs" }: { currentLang?: string })
       en: "Introduction",
       cs: "Úvod",
       de: "Einführung",
-      href: "/#introduction",
+      href: "/introduction",
     },
     {
       en: "Products",
       cs: "Produkty",
       de: "Produkte",
-      href: "/#products",
+      href: "/products",
     },
     {
       en: "Contacts",
       cs: "Kontakty",
       de: "Kontakte",
-      href: "/#contacts",
+      href: "/contacts",
     },
     {
       en: "Articles",
@@ -90,26 +90,27 @@ export default function Header({ currentLang = "cs" }: { currentLang?: string })
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 h-16">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 h-20">
         {/* Desktop Layout - 3 sections with space-around */}
         <div className="hidden lg:flex justify-between items-center h-full">
           {/* Logo Section */}
           <div className="flex-1 flex justify-start">
             <Link href={`/${language}`} className="flex items-center">
-              <Image src="/logo.png" alt="Logo" width={120} height={40} className="h-10 w-auto" />
+              <Image src="/logo.png" alt="Logo" width={160} height={50} className="h-14 w-auto" />
             </Link>
           </div>
 
           {/* Navigation Menu Section */}
           <div className="flex-1 flex justify-center">
             <NavigationMenu>
-              <NavigationMenuList className="gap-1">
+              <NavigationMenuList className="gap-2">
                 {menuItems.map((item) => (
                   <NavigationMenuItem key={item.href}>
                     <Link href={`/${language}${item.href}`} legacyBehavior passHref>
                       <NavigationMenuLink
                         className={cn(
                           navigationMenuTriggerStyle(),
+                          "text-lg font-medium px-5 py-3",
                           pathname === `/${language}${item.href}` ? "text-primary" : "text-muted-foreground",
                         )}
                       >
@@ -125,18 +126,18 @@ export default function Header({ currentLang = "cs" }: { currentLang?: string })
           {/* Inquiry & Language Section */}
           <div className="flex-1 flex justify-end items-center gap-4">
             <Link href={`/${language}/contacts#inquiry`}>
-              <Button>{inquiryText[language]}</Button>
+              <Button className="text-base px-6 py-2 h-11">{inquiryText[language]}</Button>
             </Link>
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm" className="gap-2 h-9 px-2">
+                <Button variant="outline" size="sm" className="gap-2 h-11 px-3">
                   <Image
                     src={currentLanguage.flag || "/placeholder.svg"}
                     alt={currentLanguage.name}
-                    width={24}
-                    height={16}
-                    className="h-4 w-6 object-cover"
+                    width={28}
+                    height={18}
+                    className="h-5 w-7 object-cover"
                   />
                   <ChevronDown className="h-4 w-4 opacity-50" />
                 </Button>
@@ -146,14 +147,14 @@ export default function Header({ currentLang = "cs" }: { currentLang?: string })
                   <DropdownMenuItem
                     key={lang.code}
                     onClick={() => switchLanguage(lang.code as Language)}
-                    className={cn("gap-2", language === lang.code && "bg-accent font-medium")}
+                    className={cn("gap-2 text-base py-2", language === lang.code && "bg-accent font-medium")}
                   >
                     <Image
                       src={lang.flag || "/placeholder.svg"}
                       alt={lang.name}
-                      width={24}
-                      height={16}
-                      className="h-4 w-6 object-cover"
+                      width={28}
+                      height={18}
+                      className="h-5 w-7 object-cover"
                     />
                     {lang.name}
                   </DropdownMenuItem>
@@ -167,25 +168,25 @@ export default function Header({ currentLang = "cs" }: { currentLang?: string })
         <div className="flex lg:hidden justify-between items-center h-full">
           {/* Logo */}
           <Link href={`/${language}`} className="flex items-center">
-            <Image src="/logo.png" alt="Logo" width={100} height={32} className="h-8 w-auto" />
+            <Image src="/logo.png" alt="Logo" width={140} height={45} className="h-12 w-auto" />
           </Link>
 
           {/* Mobile Menu Trigger */}
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon">
-                <Menu className="h-5 w-5" />
+              <Button variant="outline" size="icon" className="h-11 w-11">
+                <Menu className="h-6 w-6" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right">
-              <nav className="flex flex-col gap-4 pt-4">
+            <SheetContent side="right" className="w-[280px] sm:w-[350px]">
+              <nav className="flex flex-col gap-6 pt-6">
                 {menuItems.map((item) => (
                   <Link
                     key={item.href}
                     href={`/${language}${item.href}`}
                     className={cn(
-                      "text-lg font-medium transition-colors hover:text-primary",
+                      "text-xl font-medium transition-colors hover:text-primary",
                       pathname === `/${language}${item.href}` ? "text-primary" : "text-muted-foreground",
                     )}
                   >
@@ -195,24 +196,24 @@ export default function Header({ currentLang = "cs" }: { currentLang?: string })
 
                 {/* Inquiry Button in Mobile Menu */}
                 <Link href={`/${language}/contacts#inquiry`} className="mt-4 w-full">
-                  <Button className="w-full">{inquiryText[language]}</Button>
+                  <Button className="w-full text-lg py-6">{inquiryText[language]}</Button>
                 </Link>
 
-                <div className="mt-4 pt-4 border-t">
-                  <div className="flex flex-col gap-2">
+                <div className="mt-6 pt-6 border-t">
+                  <div className="flex flex-col gap-3">
                     {languages.map((lang) => (
                       <Button
                         key={lang.code}
                         variant={language === lang.code ? "default" : "ghost"}
-                        className="justify-start gap-2"
+                        className="justify-start gap-3 text-lg h-12"
                         onClick={() => switchLanguage(lang.code as Language)}
                       >
                         <Image
                           src={lang.flag || "/placeholder.svg"}
                           alt={lang.name}
-                          width={24}
-                          height={16}
-                          className="h-4 w-6 object-cover"
+                          width={28}
+                          height={18}
+                          className="h-5 w-7 object-cover"
                         />
                         {lang.name}
                       </Button>

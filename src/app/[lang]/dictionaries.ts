@@ -20,6 +20,14 @@ interface Dictionary {
     ctaTitle: string
     ctaText: string
   }
+  installations: {
+    title: string
+    description: string
+  }
+  partners: {
+    title: string
+    description: string
+  }
   contacts: {
     title: string
     description: string
@@ -72,6 +80,14 @@ const dictionaries: Record<string, () => Promise<Dictionary>> = {
         ctaTitle: "Interested in this solution?",
         ctaText: "Contact us for more information or to discuss your specific requirements.",
       },
+      installations: {
+        title: "Photo Gallery of Installations",
+        description: "View our completed projects and installations",
+      },
+      partners: {
+        title: "We Cooperate",
+        description: "Our trusted partners and collaborators",
+      },
       contacts: {
         title: "Contact Us",
         description: "Get in touch with our team for any questions or inquiries.",
@@ -104,8 +120,8 @@ const dictionaries: Record<string, () => Promise<Dictionary>> = {
   cs: () =>
     Promise.resolve({
       home: {
-        title: "Vítejte na našem webu",
-        description: "Objevte naše úžasné produkty a služby navržené pro vaše potřeby.",
+        title: "Sunpower",
+        description: "Smysluplné energie",
         exploreButton: "Prozkoumat produkty",
         contactButton: "Kontaktujte nás",
         featuresTitle: "Naše funkce",
@@ -120,6 +136,14 @@ const dictionaries: Record<string, () => Promise<Dictionary>> = {
         galleryTitle: "Galerie",
         ctaTitle: "Máte zájem o toto řešení?",
         ctaText: "Kontaktujte nás pro více informací nebo pro diskuzi o vašich specifických požadavcích.",
+      },
+      installations: {
+        title: "Fotogalerie instalací",
+        description: "Prohlédněte si naše dokončené projekty a instalace",
+      },
+      partners: {
+        title: "Spolupracujeme",
+        description: "Naši důvěryhodní partneři a spolupracovníci",
       },
       contacts: {
         title: "Kontaktujte nás",
@@ -172,6 +196,14 @@ const dictionaries: Record<string, () => Promise<Dictionary>> = {
         ctaTitle: "Interessiert an dieser Lösung?",
         ctaText:
           "Kontaktieren Sie uns für weitere Informationen oder um Ihre spezifischen Anforderungen zu besprechen.",
+      },
+      installations: {
+        title: "Fotogalerie der Installationen",
+        description: "Sehen Sie sich unsere abgeschlossenen Projekte und Installationen an",
+      },
+      partners: {
+        title: "Wir kooperieren",
+        description: "Unsere vertrauenswürdigen Partner und Mitarbeiter",
       },
       contacts: {
         title: "Kontaktieren Sie uns",

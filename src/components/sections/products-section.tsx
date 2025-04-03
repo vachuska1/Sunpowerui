@@ -18,7 +18,7 @@ export default function ProductsSection({
   const products = [
     {
       id: "heating-cooling",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/Produkty/klimastena.png",
       title: {
         en: "Heating and Cooling",
         cs: "Vytápění a chlazení",
@@ -32,7 +32,7 @@ export default function ProductsSection({
     },
     {
       id: "storage-tanks",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/Produkty/akumulace.png",
       title: {
         en: "Storage Tanks",
         cs: "Akumulační nádrže",
@@ -46,7 +46,7 @@ export default function ProductsSection({
     },
     {
       id: "control-systems",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/Produkty/r_system.png",
       title: {
         en: "Control Systems",
         cs: "Řídicí systémy",
@@ -60,7 +60,7 @@ export default function ProductsSection({
     },
     {
       id: "island-house",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/Produkty/ostrov.png",
       title: {
         en: "Island House",
         cs: "Ostrovní dům",
@@ -74,7 +74,7 @@ export default function ProductsSection({
     },
     {
       id: "energy-concepts",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/Produkty/koncepce.png",
       title: {
         en: "Energy Concepts & Project Preparations",
         cs: "Energetické koncepty a přípravy projektů",
@@ -88,7 +88,7 @@ export default function ProductsSection({
     },
     {
       id: "energy-management",
-      image: "/placeholder.svg?height=300&width=400",
+      image: "/Produkty/energetik.png",
       title: {
         en: "Energy Management",
         cs: "Energetický management",

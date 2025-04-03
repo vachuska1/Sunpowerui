@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -62,9 +61,9 @@ export default function ContactsSection({
                 <div>
                   <h3 className="font-medium">{dictionary.contacts.addressTitle}</h3>
                   <p className="text-sm text-muted-foreground">
-                    123 Business Street
+                    Jarošovská 840/II
                     <br />
-                    Prague, 110 00
+                    Jindřichův Hradec, 377 02
                     <br />
                     Czech Republic
                   </p>
@@ -75,7 +74,7 @@ export default function ContactsSection({
                 <Phone className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <h3 className="font-medium">{dictionary.contacts.phoneTitle}</h3>
-                  <p className="text-sm text-muted-foreground">+420 123 456 789</p>
+                  <p className="text-sm text-muted-foreground">+420 731 744 188</p>
                 </div>
               </div>
 
@@ -83,15 +82,23 @@ export default function ContactsSection({
                 <Mail className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <h3 className="font-medium">{dictionary.contacts.emailTitle}</h3>
-                  <p className="text-sm text-muted-foreground">info@example.com</p>
+                  <p className="text-sm text-muted-foreground">office@sunpower.cz</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Map placeholder - in a real app, this would be an actual map */}
-          <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-            <p className="text-muted-foreground">{dictionary.contacts.mapPlaceholder}</p>
+          {/* Map */}
+          <div className="aspect-video rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2621.1088726152!2d15.00066307688793!3d49.14159197125761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470d1d6c1f1d2a8f%3A0x5f568493b3c77c97!2zSmFyb8Whb3Zza8OhIDg0MC9JSSwgMzc3IDAyIEppbmTFmWljaOWvdiBIcmFkZWM!5e0!3m2!1sen!2scz!4v1712159066345!5m2!1sen!2scz"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
 
@@ -142,3 +149,4 @@ export default function ContactsSection({
     </div>
   )
 }
+
